@@ -31,7 +31,7 @@ const EditProfile: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     if (!account) {
       return alert("Please connect wallet first");
     }
-    // TODO: invoke get_profile
+    // TODO: invoke update_profile
   };
 
   const clearProfile = async () => {
