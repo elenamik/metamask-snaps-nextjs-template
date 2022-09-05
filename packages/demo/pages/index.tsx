@@ -38,7 +38,7 @@ const Home: NextPage = () => {
         <p className="pt-2">
           Get started by enabling the snap, if you have not done so already.
           <br />
-          To change your image, click the edit button.
+          To change your profile, click the edit button.
         </p>
 
         <h2 className="flex w-full flex-col content-center justify-center pt-10">
