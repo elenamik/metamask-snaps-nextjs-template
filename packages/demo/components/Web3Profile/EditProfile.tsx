@@ -31,34 +31,12 @@ const EditProfile: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     if (!account) {
       return alert("Please connect wallet first");
     }
-    const result = await window?.ethereum.request({
-      method: "wallet_invokeSnap",
-      params: [
-        snapId,
-        {
-          method: "update_profile",
-          params: {
-            avatarUrl: profile.imageUrl,
-            address: account,
-            bio: profile.bio,
-            screenName: profile.screenName,
-          },
-        },
-      ],
-    });
-    console.log(result);
+    // TODO: invoke get_profile
   };
 
   const clearProfile = async () => {
-    const result: { success: boolean } = await window?.ethereum.request({
-      method: "wallet_invokeSnap",
-      params: [
-        snapId,
-        {
-          method: "clear_profile",
-        },
-      ],
-    });
+    let result: { success: boolean };
+    // TODO: invoke clear_profile
     if (result.success) {
       onClose();
     }
@@ -66,15 +44,8 @@ const EditProfile: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   const randomizeAvatar = async () => {
     setLoading(true);
-    const result: { success: boolean } = await window?.ethereum.request({
-      method: "wallet_invokeSnap",
-      params: [
-        snapId,
-        {
-          method: "randomize_avatar",
-        },
-      ],
-    });
+    let result: { success: boolean };
+    // TODO: invoke randomize_avatar
     if (result.success) {
       onClose();
     }

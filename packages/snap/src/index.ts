@@ -12,7 +12,6 @@ module.exports.onRpcRequest = async ({ request }: {
   }
 };
 
-const RANDOM_PIC_API= "https://picsum.photos/200"
 type UpdateProfileRequest = JsonRpcRequest<{avatarUrl:string, screenName:string, address:string,bio:string }, 'update_profile'>
 type GetProfileRequest = JsonRpcRequest<{}, 'get_profile'>
 type RandomizeAvatarRequest = JsonRpcRequest<{}, 'randomize_avatar'>

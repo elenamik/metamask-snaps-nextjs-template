@@ -9,16 +9,7 @@ export const ProfileRenderer: React.FC<{ handleEdit: () => void }> = ({
 }) => {
   const { data: profile, isLoading } = useQuery({
     queryFn: async () => {
-      const { profile } = await window.ethereum.request({
-        method: "wallet_invokeSnap",
-        params: [
-          snapId,
-          {
-            method: "get_profile",
-          },
-        ],
-      });
-      return profile;
+      // TODO: invoke get_profile
     },
   });
 
