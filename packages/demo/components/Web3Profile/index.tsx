@@ -32,19 +32,7 @@ const Web3Profile: React.FC = () => {
   );
 
   const installSnap = async (snapId: string) => {
-    try {
-      await window?.ethereum?.request({
-        method: "wallet_enable",
-        params: [
-          {
-            [`wallet_snap_${snapId}`]: {},
-          },
-        ],
-      });
-      setMode("VIEW");
-    } catch (err) {
-      console.error("Failed to install snap, please try again");
-    }
+    // TODO: install snap
   };
 
   React.useEffect(() => {
