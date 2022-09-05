@@ -3,7 +3,7 @@ import { IPFSHTTPClient } from "ipfs-http-client";
 import { AddResult } from "ipfs-core-types/dist/src/root";
 import { CrossCircle } from "@web3uikit/icons";
 import { snapId } from ".";
-import { useIpfs } from "../../utils/ipfs";
+import { IPFS_ENDPOINT, useIpfs } from "../../utils/ipfs";
 import { Loading } from "@web3uikit/core";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
@@ -93,9 +93,7 @@ const EditProfile: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     if (files && files.length > 0) {
       const file = files[0];
       const uploadResult: AddResult = await uploadToIpfs(file);
-      console.log('RES', uploadResult)
-      imageUrl = `https://infura-ipfs.io/ipfs/${uploadResult.path}`;
-      console.log(imageUrl)
+      imageUrl = `${IPFS_ENDPOINT}/ipfs/${uploadResult.path}`;
     }
 
     await updateProfile({ imageUrl, screenName, bio });

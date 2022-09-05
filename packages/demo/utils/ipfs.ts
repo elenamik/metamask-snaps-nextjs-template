@@ -1,4 +1,5 @@
 import { create, IPFSHTTPClient } from "ipfs-http-client";
+export const IPFS_ENDPOINT = "https://infura-ipfs.io";
 
 export const useIpfs = () => {
   const projectId = process.env.NEXT_PUBLIC_INFURA_ID;
@@ -8,7 +9,7 @@ export const useIpfs = () => {
   let ipfsConn: IPFSHTTPClient | undefined;
   try {
     ipfsConn = create({
-      url: "https://infura-ipfs.io:5001/api/v0",
+      url: `${IPFS_ENDPOINT}:5001/api/v0`,
       headers: {
         authorization,
       },
