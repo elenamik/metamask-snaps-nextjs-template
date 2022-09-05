@@ -1,6 +1,4 @@
 import { JsonRpcId, JsonRpcVersion } from "@metamask/types";
-// TODO: can connect to a provider?
-// const provider = new ethers.providers.JsonRpcProvider('https://mainnet.infura.io/v3/<project_id>')
 const RANDOM_PIC_API= "https://picsum.photos/200"
 
 export interface JsonRpcRequest<T, M> {
@@ -39,7 +37,6 @@ async function getState(): Promise<SnapState> {
   return state;
 }
 
-// TODO: export these as types for the front end
 type UpdateProfileRequest = JsonRpcRequest<{avatarUrl:string, screenName:string, address:string,bio:string }, 'update_profile'>
 type GetProfileRequest = JsonRpcRequest<{}, 'get_profile'>
 type RandomizeAvatarRequest = JsonRpcRequest<{}, 'randomize_avatar'>
@@ -53,8 +50,6 @@ module.exports.onRpcRequest = async ({ request }: {
   switch (request.method) {
     case 'update_profile':
           const { avatarUrl, screenName, address, bio } = request.params;
-          // TODO: get ENS for address
-          // const ens = await provider.lookupAddress(address) (request timing out)
 
           const newState: SnapState = {
             ...state,
@@ -63,7 +58,7 @@ module.exports.onRpcRequest = async ({ request }: {
               ...address && {address},
               ...bio && {bio},
               ...avatarUrl && {avatarUrl},
-              ...screenName && {screenName},
+              ...screenName && {screenName}
             }
           }
           await saveState(newState)

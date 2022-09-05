@@ -9,9 +9,9 @@ MetaMask snap + React component that attaches a user profile to your wallet. It 
 3. create a `packages/demo/.env.local` and populate the post at which snap is being served, as well as Infura project info (used to upload images to IPFS):
 ```
 NEXT_PUBLIC_SNAP_ID=local:http://localhost:8086
+## OPTIONAL: only if you want to enable uploading to IPFS with Infura
 NEXT_PUBLIC_INFURA_ID=<fill here>
 NEXT_PUBLIC_INFURA_API_KEY=<fill here>
-
 ```
 4. `yarn demo-start` to start nextjs web app
 
