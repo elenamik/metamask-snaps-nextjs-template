@@ -1,5 +1,7 @@
-# web3-profile-snap
-MetaMask snap + React component that attaches a user profile to your wallet. It maintains a photo, screen name, bio, and your wallet address.
+# MetaMask Snaps - High Low Game
+MetaMask snap + web UI to let you play a guessing game and keep score. Serves as a learning resource to building with MetaMask snaps.
+
+Please reference this [live coding session](https://www.youtube.com/watch?v=7J5NBJRABu0) for a walkthrough :)
 
 
 
